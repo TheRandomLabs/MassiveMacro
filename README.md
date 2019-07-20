@@ -41,7 +41,7 @@ The compiled executable is called `massivemacro_linux`.
 `sh linux/pull_and_build.sh` can be run from the root MassiveMacro directory to pull the latest
 version of MassiveMacro from GitHub before running `linux/build.sh`.
 
-## Mac OS X
+### Mac OS X
 
 `sh macos/build.sh` can be run from the root MassiveMacro directory to compile a Mac OS X
 executable. The script generates an executable called `massivemacro_macos`, a `.app` called
