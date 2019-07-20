@@ -60,6 +60,9 @@ version of MassiveMacro from GitHub before running `macos/build.sh`.
 MassiveMacro is primarily built for Discord, but it works in other applications as well to varying
 degrees. Vanessa text works flawlessly on other instant messaging platforms such as Skype and Steam.
 
+Messages longer than 2000 characters (Discord's character limit) are automatically split into
+multiple messages.
+
 Precompiled binaries are available for Windows, Linux and Mac OS X.
 
 ### Key bindings
