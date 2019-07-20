@@ -69,7 +69,7 @@ Precompiled binaries are available for Windows, Linux and Mac OS X.
     Alt+Shift+Enter: Vanessa (aLtErNaTe CaPs)
     Ctrl+Space+Enter: Massive Vanessa (combination of lowercase text and alternate massive)
 
-Alternate Vanessa text causes random words to be misspelled.
+Massive Vanessa text causes random words to be misspelled.
 
 Multiple messages can be sent at once on Discord by typing multiple lines in the same message by
 pressing `Shift+Enter` then using one of the above key bindings.
