@@ -1,0 +1,5 @@
+.idea
+__pycache__/
+bin/
+Pipfile.lock
+sign_private.bat
