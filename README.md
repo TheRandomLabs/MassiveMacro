@@ -64,10 +64,7 @@ Precompiled binaries are available for Windows, Linux and Mac OS X.
 
 ### Key bindings
 
-    Ctrl+Enter: Plain massive (primarily regional indicators)
-    Ctrl+Shift+Enter: Alternate massive (regional indicators mixed with alternate emojis)
-    Alt+Shift+Enter: Vanessa (aLtErNaTe CaPs)
-    Ctrl+Space+Enter: Massive Vanessa (combination of lowercase text and alternate massive)
+![](https://raw.githubusercontent.com/TheRandomLabs/MassiveMacro/master/key_bindings.png)
 
 Massive Vanessa text causes random words to be misspelled.
 
