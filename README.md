@@ -2,9 +2,14 @@
 
 Massive text for Discord with the power of [massive.py](https://github.com/TheRandomLabs/massive.py).
 
-## Building
+## Running and building
 
 Python 3.7 and Pipenv are required to run and build MassiveMacro.
+
+To run MassiveMacro directly:
+
+    $ pipenv install
+    $ pipenv run python run.py
 
 Compiled executables are located in the `bin` directory.
 
