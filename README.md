@@ -11,7 +11,7 @@ To run MassiveMacro directly:
     $ pipenv install
     $ pipenv run python run.py
 
-Compiled executables are located in the `bin` directory.
+Compiled executables are located in the `bin` directory:
 
 ### Windows
 
