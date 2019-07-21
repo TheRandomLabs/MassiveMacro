@@ -52,6 +52,8 @@ version of MassiveMacro from GitHub before running `linux/build.sh`.
 executable. The script generates an executable called `massivemacro_macos`, a `.app` called
 `MassiveMacro.app` and an archive that contains `MassiveMacro.app` called `MassiveMacro.zip`.
 
+`macos/build.sh` signs the `.app` with the `"MassiveMacro"` certificate by default.
+
 `sh macos/pull_and_build.sh` can be run from the root MassiveMacro directory to pull the latest
 version of MassiveMacro from GitHub before running `macos/build.sh`.
 
