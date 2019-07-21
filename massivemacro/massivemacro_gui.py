@@ -12,6 +12,7 @@ from massive import vanessa
 from massivemacro import massivizers
 
 
+# TODO move settings out so that they work with --no-gui
 # noinspection PyArgumentList,DuplicatedCode
 class MassiveMacroWindow(QMainWindow):
 	def __init__(self):

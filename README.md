@@ -20,7 +20,10 @@ Compiled executables are located in the `bin` directory:
 respectively.
 
 `linux\build.bat` can be called from the root MassiveMacro directory to only compile an
-executable for Windows.
+executable for Linux if WSL is installed.
+
+Building a Linux executable on WSL requires `qt5-default` to be installed. An executable built on
+WSL displays Fontconfig errors in the terminal when run, but otherwise functions normally.
 
 `windows\build.bat` can be called from the root MassiveMacro directory to only compile an
 executable for Windows.
