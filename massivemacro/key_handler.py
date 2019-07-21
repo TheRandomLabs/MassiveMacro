@@ -80,5 +80,10 @@ def on_release(key):
 		pass
 
 
-def start_listener():
-	keyboard.Listener(on_press=on_press, on_release=on_release).start()
+def start_listener(gui):
+	if gui:
+		keyboard.Listener(on_press=on_press, on_release=on_release).start()
+
+	else:
+		with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+			listener.join()

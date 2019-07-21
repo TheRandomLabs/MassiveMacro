@@ -47,5 +47,5 @@ CTRL_SPACE_ENTER = key_handler.EnterKeyBinding(
 )
 
 
-def init():
-	key_handler.start_listener()
+def init(gui):
+	key_handler.start_listener(gui)

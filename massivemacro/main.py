@@ -9,8 +9,6 @@ MESSAGE_SEND_INTERVAL = 0.08
 
 
 def handle_massivization(massivizer):
-	print(massivizers.VANESSA.case_behavior.name)
-
 	original_clipboard = clipboard.get()
 	clipboard.empty()
 
@@ -40,7 +38,9 @@ def handle_massivization(massivizer):
 	clipboard.copy(original_clipboard)
 
 
-def main():
+def main(gui):
 	clipboard.ensure_available()
-	massivizers.init()
-	massivemacro_gui.init()
+	massivizers.init(gui)
+
+	if gui:
+		massivemacro_gui.init()

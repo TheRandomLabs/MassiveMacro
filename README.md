@@ -8,8 +8,8 @@ Python 3.7 and Pipenv are required to run and build MassiveMacro.
 
 To run MassiveMacro directly:
 
-    $ pipenv install
-    $ pipenv run python run.py
+	$ pipenv install
+	$ pipenv run python run.py
 
 Compiled executables are located in the `bin` directory:
 
@@ -63,11 +63,15 @@ MassiveMacro is primarily built for Discord, but it works in other applications 
 degrees. Vanessa text works flawlessly on other instant messaging platforms such as Skype and Steam.
 
 Messages longer than 2000 characters (Discord's character limit) are automatically split into
-multiple messages.
+multiple messages by default.
+
+The command line option `--no-gui` can be used to disable the GUI.
 
 Precompiled binaries are available for Windows, Linux and Mac OS X.
 
 ### Key bindings
+
+Default key bindings:
 
 ![](https://raw.githubusercontent.com/TheRandomLabs/MassiveMacro/master/key_bindings.png)
 
@@ -81,7 +85,11 @@ pressing `Shift+Enter` then using one of the above key bindings.
 On Linux, MassiveMacro requires `xsel` to be
 installed:
 
-    $ sudo apt install xsel
+	$ sudo apt install xsel
+
+When the GUI is enabled, Qt 5 is also required:
+
+	$ sudo apt install qt5-default
 
 Additionally, MassiveMacro is built against glibc 2.23, which means it only runs with glibc 2.23
 or newer.

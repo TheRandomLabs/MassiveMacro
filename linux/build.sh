@@ -8,6 +8,6 @@ pipenv install --dev
 pipenv run pyinstaller massivemacro_pyinstaller.spec
 
 mkdir -p bin
-mv dist/massivemacro_linux bin
+mv dist/massivemacro bin/massivemacro_linux
 
 rm -rf build dist
