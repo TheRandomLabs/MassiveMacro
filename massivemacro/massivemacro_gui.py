@@ -208,7 +208,7 @@ class MassiveMacroWindow(QMainWindow):
 		)
 
 	def get_random_char_swap_chance(self, chance, massivizer):
-		self.add_widget(self.get_label("Random char swap chance:", 8), True)
+		self.add_widget(self.get_label("Random character swap chance:", 8), True)
 		return self.get_double_line_edit(
 			str(chance),
 			lambda text: (
@@ -335,7 +335,7 @@ class MassiveMacroWindow(QMainWindow):
 			if self.settings.tray_notification:
 				self.tray_icon.showMessage(
 					"MassiveMacro",
-					"MassiveMacro was minimized to the system tray",
+					"MassiveMacro was minimized to the system tray.",
 					self.icon,
 					2000
 				)
