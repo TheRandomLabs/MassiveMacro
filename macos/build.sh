@@ -15,4 +15,4 @@ mv dist/MassiveMacro.app bin
 rm bin/MassiveMacro.zip
 zip -r bin/MassiveMacro.zip bin/MassiveMacro.app/*
 
-rm -rf build dist
+rm -rf build dist Info.plist

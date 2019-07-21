@@ -43,5 +43,8 @@ app = BUNDLE(
 	exe,
 	name="MassiveMacro.app",
 	icon="macos/icon.icns",
-	bundle_identifier="com.therandomlabs.massivemacro"
+	bundle_identifier="com.therandomlabs.massivemacro",
+	info_plist={
+		"CFBundleName": "MassiveMacro"
+	}
 )

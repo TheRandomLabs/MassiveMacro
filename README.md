@@ -80,3 +80,5 @@ On Linux, MassiveMacro requires `xsel` to be
 installed:
 
     $ sudo apt install xsel
+
+Additionally, MassiveMacro is built against glibc 2.23, which means it needs glibc 2.23 or higher.
