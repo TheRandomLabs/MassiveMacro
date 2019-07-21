@@ -8,8 +8,9 @@ pyinstaller = "*"
 
 [packages]
 massive-py = "*"
-pyperclip = "*"
 pynput = "*"
+pyperclip = "*"
+pyqt5 = "==5.12.2"
 
 [requires]
 python_version = "3.7"

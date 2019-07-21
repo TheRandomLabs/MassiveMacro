@@ -3,6 +3,8 @@ import sys
 from pynput import keyboard
 from pynput.keyboard import Controller, Key
 
+from massivemacro import main
+
 COMMAND_KEY = Key.cmd_l if sys.platform == "darwin" else Key.ctrl_l
 
 ALL_MODIFIERS = set()
@@ -10,8 +12,8 @@ ALL_KEY_BINDINGS = set()
 
 
 class EnterKeyBinding(object):
-	def __init__(self, *args):
-		self.handler = None
+	def __init__(self, massivizer, *args):
+		self.massivizer = massivizer
 		self.modifiers = set()
 
 		for modifier in args:
@@ -25,17 +27,16 @@ class EnterKeyBinding(object):
 		ALL_KEY_BINDINGS.add(self)
 
 	@property
-	def handler(self):
-		return self.__handler
+	def massivizer(self):
+		return self.__massivizer
 
-	@handler.setter
-	def handler(self, func):
-		if func:
-			for key_binding in ALL_KEY_BINDINGS:
-				if key_binding is not self and key_binding.__handler == func:
-					key_binding.__handler = self.__handler
+	@massivizer.setter
+	def massivizer(self, massivizer):
+		for key_binding in ALL_KEY_BINDINGS:
+			if key_binding is not self and key_binding.__massivizer == massivizer:
+				key_binding.__massivizer = self.__massivizer
 
-		self.__handler = func
+		self.__massivizer = massivizer
 
 
 key_controller = Controller()
@@ -68,7 +69,7 @@ def on_press(key):
 			for modifier in ALL_MODIFIERS:
 				release(modifier)
 
-			key_binding.handler()
+			main.handle_massivization(key_binding.massivizer)
 			return
 
 
@@ -80,5 +81,4 @@ def on_release(key):
 
 
 def start_listener():
-	with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
-		listener.join()
+	keyboard.Listener(on_press=on_press, on_release=on_release).start()

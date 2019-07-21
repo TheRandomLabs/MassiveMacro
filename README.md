@@ -81,4 +81,5 @@ installed:
 
     $ sudo apt install xsel
 
-Additionally, MassiveMacro is built against glibc 2.23, which means it needs glibc 2.23 or higher.
+Additionally, MassiveMacro is built against glibc 2.23, which means it only runs with glibc 2.23
+or newer.
