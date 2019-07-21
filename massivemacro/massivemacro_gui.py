@@ -328,15 +328,15 @@ class MassiveMacroWindow(QMainWindow):
 		self.setFixedSize(self.size())
 
 	def closeEvent(self, event):
-		if self.minimize_to_tray.isChecked():
+		if self.settings.minimize_to_tray:
 			event.ignore()
 			self.hide()
 
-			if self.tray_notification.isChecked():
+			if self.settings.tray_notification:
 				self.tray_icon.showMessage(
 					"MassiveMacro",
 					"MassiveMacro was minimized to the system tray",
-					QSystemTrayIcon.Information,
+					self.icon,
 					2000
 				)
 

@@ -15,6 +15,14 @@ a = Analysis(
 	noarchive=False
 )
 
+for data in a.datas:
+	if "pyconfig" in data[0]:
+		a.datas.remove(data)
+		break
+
+a.datas += [("icon.png", "./icon.png", "Data")]
+
+
 pyz = PYZ(
 	a.pure,
 	a.zipped_data,
