@@ -61,7 +61,9 @@ executable. The script generates an executable called `massivemacro_macos`, a `.
 version of MassiveMacro from GitHub before running `macos/build.sh`.
 
 To make MassiveMacro compatible with older versions of Mac OS X, follow the instructions
-[here](https://gist.github.com/phfaist/a5b8a895b003822df5397731f4673042).
+[here](https://gist.github.com/phfaist/a5b8a895b003822df5397731f4673042). In this case,
+`macos/build_without_pipenv.sh` and `macos/pull_and_build_without_pipenv.sh` should be used as such
+a Python installation does not work with Pipenv.
 
 ## Usage
 
