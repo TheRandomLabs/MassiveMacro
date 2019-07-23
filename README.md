@@ -107,3 +107,9 @@ When the GUI is enabled, Qt 5 is also required:
 
 Additionally, MassiveMacro is built against glibc 2.23, which means it only runs with glibc 2.23
 or newer.
+
+### Mac OS X
+
+MassiveMacro needs either root or
+[accessibility permissions](https://mizage.com/help/accessibility.html). To use the `.app`,
+whitelist the `.app`. Otherwise, whitelist the terminal.
