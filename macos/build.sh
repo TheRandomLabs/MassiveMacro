@@ -5,8 +5,8 @@ pkill massivemacro_macos
 
 rm -rf build dist Pipfile.lock
 
-python3 -m pipenv install --dev
-python3 -m pipenv run pyinstaller massivemacro_pyinstaller.spec
+pipenv install --dev
+pipenv run pyinstaller massivemacro_pyinstaller.spec
 
 mkdir -p bin
 rm -rf bin/MassiveMacro.app
