@@ -1,8 +1,0 @@
--i https://pypi.org/simple
-click==7.0
-massive-py==0.4.8
-pynput==1.4.2
-pyperclip==1.7.0
-pyqt5-sip==4.19.18
-pyqt5==5.12.2
-six==1.12.0

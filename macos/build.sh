@@ -12,9 +12,9 @@ mkdir -p bin
 rm -rf bin/MassiveMacro.app
 mv dist/massivemacro bin/massivemacro_macos
 mv dist/MassiveMacro.app bin
-rm bin/MassiveMacro.zip
-zip -r bin/MassiveMacro.zip bin/MassiveMacro.app/*
 
 codesign -s "MassiveMacro" bin/MassiveMacro.app
+
+sh bin/platypus.sh
 
 rm -rf build dist Info.plist
