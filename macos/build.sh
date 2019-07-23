@@ -13,6 +13,8 @@ rm -rf bin/MassiveMacro.app
 mv dist/massivemacro bin/massivemacro_macos
 mv dist/MassiveMacro.app bin
 
+platypus -P bin/MassiveMacro.platypus bin/MassiveMacro.app -y
+
 codesign -s "MassiveMacro" bin/MassiveMacro.app
 
 sh bin/platypus.sh

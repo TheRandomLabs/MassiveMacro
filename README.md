@@ -68,14 +68,8 @@ the `.app` file being added to the bundled files and the script written as such:
 ./MassiveMacro.app/Contents/MacOS/massivemacro
 ```
 
-If there is a script called `bin/platypus.sh`, it is executed when `macos/build.sh` is run.
-`bin/platypus.sh` might be written like so:
-
-```bash
-#!/bin/sh
-platypus -P MassiveMacro.platypus ~/Desktop/MassiveMacro/bin/MassiveMacro.app -y
-codesign -s "MassiveMacro" bin/MassiveMacro.app
-```
+If there is a Platypus profile at `bin/MassiveMacro.platypus`, it is automatically executed when
+`macos/build.sh` is run.
 
 ## Usage
 
