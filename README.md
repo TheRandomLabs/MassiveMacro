@@ -60,6 +60,9 @@ executable. The script generates an executable called `massivemacro_macos`, a `.
 `sh macos/pull_and_build.sh` can be run from the root MassiveMacro directory to pull the latest
 version of MassiveMacro from GitHub before running `macos/build.sh`.
 
+To make MassiveMacro compatible with older versions of Mac OS X, follow the instructions
+[here](https://gist.github.com/phfaist/a5b8a895b003822df5397731f4673042).
+
 ## Usage
 
 MassiveMacro is primarily built for Discord, but it works in other applications as well to varying
@@ -70,7 +73,7 @@ multiple messages by default.
 
 The command line option `--no-gui` can be used to disable the GUI.
 
-Precompiled binaries are available for Windows, Linux and Mac OS X.
+Precompiled binaries are available for Windows, Linux and Mac OS X 10.13+.
 
 ### Key bindings
 

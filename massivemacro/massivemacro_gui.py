@@ -3,7 +3,7 @@ import os
 import sys
 from json import JSONDecodeError
 
-from PyQt5.QtCore import QRegExp, QSize
+from PyQt5.QtCore import QRegExp
 from PyQt5.QtGui import QFont, QIcon, QRegExpValidator
 from PyQt5.QtWidgets import QAction, QApplication, QCheckBox, QComboBox, QGridLayout, QLabel, \
 	QLineEdit, QMainWindow, QMenu, QSystemTrayIcon, QWidget, qApp
@@ -23,7 +23,7 @@ class MassiveMacroWindow(QMainWindow):
 		self.icon = QIcon(get_resource("icon.png"))
 		self.setWindowIcon(self.icon)
 
-		self.setMinimumSize(QSize(330, 0))
+		self.setMinimumSize(400, 0)
 		self.setWindowTitle("MassiveMacro")
 		self.widget = QWidget(self)
 		self.setCentralWidget(self.widget)
