@@ -25,24 +25,24 @@ MASSIVE_VANESSA = discord_massive_vanessa.MassiveVanessa(
 
 CTRL_ENTER = key_handler.EnterKeyBinding(
 	PLAIN_MASSIVE,
-	Key.ctrl_l
+	Key.ctrl
 )
 
 CTRL_SHIFT_ENTER = key_handler.EnterKeyBinding(
 	ALTERNATE_MASSIVE,
-	Key.ctrl_l,
+	Key.ctrl,
 	Key.shift
 )
 
 ALT_SHIFT_ENTER = key_handler.EnterKeyBinding(
 	VANESSA,
-	Key.alt_l,
+	Key.alt,
 	Key.shift
 )
 
 CTRL_SPACE_ENTER = key_handler.EnterKeyBinding(
 	MASSIVE_VANESSA,
-	Key.ctrl_l,
+	Key.ctrl,
 	Key.space
 )
 

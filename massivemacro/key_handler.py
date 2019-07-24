@@ -17,12 +17,8 @@ class EnterKeyBinding(object):
 		self.modifiers = set()
 
 		for modifier in args:
-			if sys.platform == "darwin" and modifier == Key.ctrl_l:
-				self.modifiers.add(Key.ctrl_r)
-				ALL_MODIFIERS.add(Key.ctrl_r)
-			else:
-				self.modifiers.add(modifier)
-				ALL_MODIFIERS.add(modifier)
+			self.modifiers.add(modifier)
+			ALL_MODIFIERS.add(modifier)
 
 		ALL_KEY_BINDINGS.add(self)
 
@@ -60,6 +56,13 @@ def command(key):
 
 def on_press(key):
 	if key != Key.enter:
+		if key == Key.ctrl_l or key == Key.ctrl_r:
+			key = Key.ctrl
+		elif key == Key.alt_l or key == Key.alt_r:
+			key = Key.alt
+		elif key == Key.shift_l or key == Key.shift_r:
+			key = Key.shift
+
 		if key in ALL_MODIFIERS:
 			currently_pressed.add(key)
 		return
