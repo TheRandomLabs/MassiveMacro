@@ -1,4 +1,5 @@
 import sys
+import threading
 
 from pynput import keyboard
 from pynput.keyboard import Controller, Key
@@ -55,6 +56,8 @@ def command(key):
 
 
 def on_press(key):
+	print(key)
+
 	if key != Key.enter:
 		if key == Key.ctrl_l or key == Key.ctrl_r:
 			key = Key.ctrl
@@ -85,8 +88,18 @@ def on_release(key):
 
 def start_listener(gui):
 	if gui:
-		keyboard.Listener(on_press=on_press, on_release=on_release).start()
-
+		thread = threading.Thread(target=actually_start_listener)
+		thread.start()
 	else:
+		actually_start_listener()
+
+
+def actually_start_listener():
+	while True:
 		with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
-			listener.join()
+			try:
+				listener.join()
+			except KeyError:
+				print(
+					"Non-fatal error. MassiveMacro will continue to run."
+				)
