@@ -3,6 +3,7 @@ import os
 import sys
 from json import JSONDecodeError
 
+from PyQt5 import QtCore
 from PyQt5.QtCore import QRegExp
 from PyQt5.QtGui import QFont, QIcon, QRegExpValidator
 from PyQt5.QtWidgets import QAction, QApplication, QCheckBox, QComboBox, QGridLayout, QLabel, \
@@ -59,6 +60,9 @@ class MassiveMacroWindow(QMainWindow):
 
 		self.tray_icon = None
 
+		self.setFont(QFont("Segoe UI"))
+		self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMinimizeButtonHint)
+
 		self.add_widgets()
 		self.init_system_tray()
 
@@ -70,7 +74,7 @@ class MassiveMacroWindow(QMainWindow):
 		self.add_system_tray_widgets()
 
 	def add_plain_massive_widgets(self):
-		self.add_widget(self.get_label("Plain massive", 10), True)
+		self.add_widget(self.get_label("Plain massive", True), True)
 
 		self.pm_newlines_separate_messages = self.get_newlines_separate_parts(
 			self.settings.pm_newlines_separate_messages,
@@ -91,7 +95,7 @@ class MassiveMacroWindow(QMainWindow):
 		self.add_widget(self.pm_random_char_swap_chance, False)
 
 	def add_alternate_massive_widgets(self):
-		self.add_widget(self.get_label("Alternate massive", 10), True)
+		self.add_widget(self.get_label("Alternate massive", True), True)
 
 		self.am_newlines_separate_messages = self.get_newlines_separate_parts(
 			self.settings.am_newlines_separate_messages,
@@ -118,7 +122,7 @@ class MassiveMacroWindow(QMainWindow):
 		self.add_widget(self.am_alternate_chance, False)
 
 	def add_vanessa_widgets(self):
-		self.add_widget(self.get_label("Vanessa", 10), True)
+		self.add_widget(self.get_label("Vanessa", True), True)
 
 		self.v_newlines_separate_messages = self.get_newlines_separate_parts(
 			self.settings.v_newlines_separate_messages,
@@ -138,7 +142,7 @@ class MassiveMacroWindow(QMainWindow):
 		)
 		self.add_widget(self.v_random_char_swap_chance, False)
 
-		self.add_widget(self.get_label("Case behavior:", 8), True)
+		self.add_widget(self.get_label("Case behavior:", False), True)
 
 		self.v_case_behavior = self.get_combo_box(
 			self.settings.v_case_behavior - 1,
@@ -153,7 +157,7 @@ class MassiveMacroWindow(QMainWindow):
 		self.add_widget(self.v_case_behavior, False)
 
 	def add_massive_vanessa_widgets(self):
-		self.add_widget(self.get_label("Massive Vanessa", 10), True)
+		self.add_widget(self.get_label("Massive Vanessa", True), True)
 
 		self.mv_newlines_separate_messages = self.get_newlines_separate_parts(
 			self.settings.mv_newlines_separate_messages,
@@ -179,7 +183,7 @@ class MassiveMacroWindow(QMainWindow):
 		)
 		self.add_widget(self.mv_alternate_chance, False)
 
-		self.add_widget(self.get_label("Massive chance:", 8), True)
+		self.add_widget(self.get_label("Massive chance:", False), True)
 
 		self.mv_massive_chance = self.get_double_line_edit(
 			str(self.settings.mv_massive_chance),
@@ -199,7 +203,7 @@ class MassiveMacroWindow(QMainWindow):
 		)
 
 	def get_max_message_length(self, length, massivizer):
-		self.add_widget(self.get_label("Max message length:", 8), True)
+		self.add_widget(self.get_label("Max message length:", False), True)
 		return self.get_line_edit(
 			str(length),
 			QRegExpValidator(QRegExp("[1-9][0-9]*")),
@@ -209,7 +213,7 @@ class MassiveMacroWindow(QMainWindow):
 		)
 
 	def get_random_char_swap_chance(self, chance, massivizer):
-		self.add_widget(self.get_label("Random character swap chance:", 8), True)
+		self.add_widget(self.get_label("Random character swap chance:", False), True)
 		return self.get_double_line_edit(
 			str(chance),
 			lambda text: (
@@ -218,7 +222,7 @@ class MassiveMacroWindow(QMainWindow):
 		)
 
 	def get_alternate_chance(self, chance, massivizer):
-		self.add_widget(self.get_label("Alternate emoji chance:", 8), True)
+		self.add_widget(self.get_label("Alternate emoji chance:", False), True)
 		return self.get_double_line_edit(
 			str(chance),
 			lambda text: (
@@ -227,7 +231,7 @@ class MassiveMacroWindow(QMainWindow):
 		)
 
 	def add_system_tray_widgets(self):
-		self.add_widget(self.get_label("System tray", 10), True)
+		self.add_widget(self.get_label("System tray", True), True)
 
 		self.minimize_to_tray = self.get_check_box(
 			"Minimize to system tray",
@@ -241,9 +245,13 @@ class MassiveMacroWindow(QMainWindow):
 		)
 		self.add_widget(self.tray_notification, False)
 
-	def get_label(self, text, font_size):
+	def get_label(self, text, bold):
 		label = QLabel(text, self)
-		label.setFont(QFont("SansSerif", font_size))
+
+		font = QFont()
+		font.setBold(bold)
+
+		label.setFont(font)
 		return label
 
 	def get_check_box(self, text, checked, on_state_changed=lambda checked: None):
