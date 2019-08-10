@@ -9,10 +9,23 @@ MESSAGE_SEND_INTERVAL = 0.08
 
 
 def handle_massivization(massivizer):
+	# Make sure none of the modifiers get in the way
+	key_handler.release(Key.cmd_l)
+	key_handler.release(Key.cmd_r)
+	key_handler.release(Key.ctrl_l)
+	key_handler.release(Key.ctrl_r)
+	key_handler.release(Key.shift_l)
+	key_handler.release(Key.shift_r)
+	key_handler.release(Key.alt_l)
+	key_handler.release(Key.alt_r)
+	key_handler.release('a')
+	key_handler.release('x')
+	key_handler.release('v')
+	key_handler.release(Key.enter)
+
 	original_clipboard = clipboard.get()
 	clipboard.empty()
 
-	key_handler.release(Key.enter)
 	key_handler.command('a')
 	key_handler.command('x')
 

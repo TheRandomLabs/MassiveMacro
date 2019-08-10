@@ -37,7 +37,7 @@ class EnterKeyBinding(object):
 
 
 key_controller = Controller()
-currently_pressed = set()
+active_modifiers = set()
 
 
 def press(key):
@@ -55,33 +55,48 @@ def command(key):
 	key_controller.release(COMMAND_KEY)
 
 
+def translate_modifier(key):
+	if key == Key.ctrl_l or key == Key.ctrl_r:
+		return Key.ctrl
+
+	if key == Key.alt_l or key == Key.alt_r:
+		return Key.alt
+
+	if key == Key.shift_l or key == Key.shift_r:
+		return Key.shift
+
+	return key
+
+
 def on_press(key):
-	print(key)
-
 	if key != Key.enter:
-		if key == Key.ctrl_l or key == Key.ctrl_r:
-			key = Key.ctrl
-		elif key == Key.alt_l or key == Key.alt_r:
-			key = Key.alt
-		elif key == Key.shift_l or key == Key.shift_r:
-			key = Key.shift
+		if translate_modifier(key) in ALL_MODIFIERS:
+			active_modifiers.add(key)
 
-		if key in ALL_MODIFIERS:
-			currently_pressed.add(key)
 		return
 
 	for key_binding in ALL_KEY_BINDINGS:
-		if currently_pressed == key_binding.modifiers:
-			for modifier in ALL_MODIFIERS:
-				release(modifier)
+		all_modifiers_found = True
 
+		for modifier in key_binding.modifiers:
+			modifier_found = False
+
+			for active_modifier in active_modifiers:
+				if translate_modifier(active_modifier) == modifier:
+					modifier_found = True
+
+			if not modifier_found:
+				all_modifiers_found = False
+				break
+
+		if all_modifiers_found:
 			main.handle_massivization(key_binding.massivizer)
 			return
 
 
 def on_release(key):
 	try:
-		currently_pressed.remove(key)
+		active_modifiers.remove(key)
 	except KeyError:
 		pass
 
