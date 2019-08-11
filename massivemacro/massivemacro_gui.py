@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QAction, QApplication, QCheckBox, QComboBox, QGridLa
 	QLineEdit, QMainWindow, QMenu, QSystemTrayIcon, QWidget, qApp
 from massive import vanessa
 
-from massivemacro import massivizers
+from massivemacro import massivizers, key_handler
 
 
 # TODO move settings out so that they work with --no-gui
@@ -322,7 +322,10 @@ class MassiveMacroWindow(QMainWindow):
 
 		show_action.triggered.connect(self.show)
 		hide_action.triggered.connect(self.hide)
-		quit_action.triggered.connect(qApp.quit)
+		quit_action.triggered.connect(lambda: (
+			key_handler.stop_listener(),
+			qApp.quit()
+		))
 
 		tray_menu = QMenu()
 		tray_menu.addAction(show_action)

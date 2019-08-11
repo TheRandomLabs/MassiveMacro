@@ -38,6 +38,8 @@ class EnterKeyBinding(object):
 
 key_controller = Controller()
 active_modifiers = set()
+current_listener = None
+stopped = False
 
 
 def press(key):
@@ -69,6 +71,8 @@ def translate_modifier(key):
 
 
 def on_press(key):
+	print(key)
+
 	if key != Key.enter:
 		if translate_modifier(key) in ALL_MODIFIERS:
 			active_modifiers.add(key)
@@ -113,11 +117,28 @@ def start_listener(gui):
 
 
 def actually_start_listener():
+	global current_listener
+	global stopped
+
+	stopped = False
+
 	while True:
+		if stopped:
+			return
+
 		with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+			current_listener = listener
+
 			try:
 				listener.join()
 			except KeyError:
 				print(
 					"Non-fatal error. MassiveMacro will continue to run."
 				)
+
+
+def stop_listener():
+	global stopped
+
+	current_listener.stop()
+	stopped = True
