@@ -76,6 +76,9 @@ def on_press(key):
 		return
 
 	for key_binding in ALL_KEY_BINDINGS:
+		if len(key_binding.modifiers) != len(active_modifiers):
+			continue
+
 		all_modifiers_found = True
 
 		for modifier in key_binding.modifiers:
