@@ -49,9 +49,9 @@ The compiled executable is called `massivemacro_linux`.
 `sh linux/pull_and_build.sh` can be run from the root MassiveMacro directory to pull the latest
 version of MassiveMacro from GitHub before running `linux/build.sh`.
 
-### Mac OS X
+### macOS
 
-`sh macos/build.sh` can be run from the root MassiveMacro directory to compile a Mac OS X
+`sh macos/build.sh` can be run from the root MassiveMacro directory to compile a macOS
 executable. The script generates an executable called `massivemacro_macos`, a `.app` called
 `MassiveMacro.app` and an archive that contains `MassiveMacro.app` called `MassiveMacro.zip`.
 
@@ -81,7 +81,7 @@ multiple messages by default.
 
 The command line option `--no-gui` can be used to disable the GUI.
 
-Precompiled binaries are available for Windows, Linux and Mac OS X 10.13+.
+Precompiled binaries are available for Windows, Linux and macOS 10.13+.
 
 ### Key bindings
 
@@ -108,7 +108,7 @@ When the GUI is enabled, Qt 5 is also required:
 Additionally, MassiveMacro is built against glibc 2.23, which means it only runs with glibc 2.23
 or newer.
 
-### Mac OS X
+### macOS
 
 MassiveMacro needs either root or
 [accessibility permissions](https://mizage.com/help/accessibility.html). To use the `.app`,
