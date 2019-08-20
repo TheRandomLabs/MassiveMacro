@@ -10,47 +10,45 @@ VSVersionInfo(
 		date=(0, 0)
 	),
 	kids=[
-		StringFileInfo(
-			[
-				StringTable(
-					u"040904B0",
-					[
-						StringStruct(
-							u"CompanyName",
-							u"TheRandomLabs Inc."
-						),
-						StringStruct(
-							u"FileDescription",
-							u"MassiveMacro"
-						),
-						StringStruct(
-							u"FileVersion",
-							u"0.1.0"
-						),
-						StringStruct(
-							u"InternalName",
-							u"massivemacro"
-						),
-						StringStruct(
-							u"LegalCopyright",
-							u"\xa9 TheRandomLabs; available under the MIT License"
-						),
-						StringStruct(
-							u"OriginalFilename",
-							u"MassiveMacro.exe"
-						),
-						StringStruct(
-							u"ProductName",
-							u"MassiveMacro"
-						),
-						StringStruct(
-							u"ProductVersion",
-							u"0.1.0"
-						)
-					]
-				)
-			]
-		),
+		StringFileInfo([
+			StringTable(
+				u"040904B0",
+				[
+					StringStruct(
+						u"CompanyName",
+						u"TheRandomLabs Inc."
+					),
+					StringStruct(
+						u"FileDescription",
+						u"MassiveMacro"
+					),
+					StringStruct(
+						u"FileVersion",
+						u"0.1.0"
+					),
+					StringStruct(
+						u"InternalName",
+						u"massivemacro"
+					),
+					StringStruct(
+						u"LegalCopyright",
+						u"\xa9 TheRandomLabs; available under the MIT License"
+					),
+					StringStruct(
+						u"OriginalFilename",
+						u"MassiveMacro.exe"
+					),
+					StringStruct(
+						u"ProductName",
+						u"MassiveMacro"
+					),
+					StringStruct(
+						u"ProductVersion",
+						u"0.1.0"
+					)
+				]
+			)
+		]),
 		VarFileInfo([VarStruct(u"Translation", [1033, 1200])])
 	]
 )
