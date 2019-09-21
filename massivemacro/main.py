@@ -1,5 +1,6 @@
 import sys
 import time
+import unicodedata
 
 from pynput.keyboard import Key
 
@@ -31,7 +32,10 @@ def handle_massivization(massivizer):
 
 	clipboard.wait()
 
-	massivized = massivizer.massivize(clipboard.get())
+	# Strip diacritics
+	nfkd_form = unicodedata.normalize("NFKD", clipboard.get())
+	to_massivize = u"".join([c for c in nfkd_form if not unicodedata.combining(c)])
+	massivized = massivizer.massivize(to_massivize)
 
 	for message in massivized:
 		clipboard.empty()
