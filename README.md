@@ -34,6 +34,11 @@ executable for Windows.
 If `signtool` from the
 [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 is installed, `windows\sign_private.bat` is automatically called to sign the executable.
+
+`signtool` can also be installed by installing `windows-sdk-signing-tools` from
+[here](https://github.com/TheRandomLabs/Scoop-Bucket) using
+[Scoop](https://github.com/lukesampson/scoop).
+
 `windows\sign_private.bat` can be written like so:
 
 ```batch

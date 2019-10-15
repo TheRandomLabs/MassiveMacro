@@ -22,7 +22,6 @@ for data in a.datas:
 
 a.datas += [("icon.png", "./icon.png", "Data")]
 
-
 pyz = PYZ(
 	a.pure,
 	a.zipped_data,
